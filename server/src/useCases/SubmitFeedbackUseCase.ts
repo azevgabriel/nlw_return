@@ -31,6 +31,7 @@ export class SubmitFeedbackUseCase {
     await this.mailService.sendMail({
       type,
       comment,
+      screenshot,
     });
 
     return feedback;
