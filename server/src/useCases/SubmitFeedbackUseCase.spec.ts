@@ -2,12 +2,14 @@ import { SubmitFeedbackUseCase } from './SubmitFeedbackUseCase';
 
 const createFeedbackSpy = jest.fn();
 const sendMailSpy = jest.fn();
+const sendIssueSpy = jest.fn();
 
 const submitFeedback = new SubmitFeedbackUseCase(
   {
     create: createFeedbackSpy,
   },
-  { sendMail: sendMailSpy }
+  { sendMail: sendMailSpy },
+  { sendIssue: sendIssueSpy }
 );
 
 describe('Submit feedback', () => {
@@ -22,6 +24,7 @@ describe('Submit feedback', () => {
 
     expect(createFeedbackSpy).toHaveBeenCalled();
     expect(sendMailSpy).toHaveBeenCalled();
+    expect(sendIssueSpy).toHaveBeenCalled();
   });
 
   it('should not be able to submit a feedback without type', async () => {
