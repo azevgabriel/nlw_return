@@ -92,12 +92,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Tailwind](https://tailwindcss.com)
 - [Headless UI](https://headlessui.dev)
 - [HTML2Canvas](https://html2canvas.hertzen.com)
-- [i18next](https://react.i18next.com)
 - [Vercel](https://vercel.com)
 - [Expo](https://expo.io/)
 - [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Yarn](https://yarnpkg.com/)
+- [Octokit](https://www.npmjs.com/package/octokit)
+- [AWS-SDK](https://www.npmjs.com/package/aws-sdk)
 
 ### Autor do projeto
 
