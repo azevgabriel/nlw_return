@@ -1,6 +1,7 @@
 import express from 'express';
 
 import { FeedbacksRepository } from './repositories/prisma/FeedbacksRepository';
+import { BucketService } from './services/awsS3/BucketService';
 import { MailService } from './services/nodemailer/MailService';
 import { IssueService } from './services/octokit/IssueService';
 import { SubmitFeedbackUseCase } from './useCases/SubmitFeedbackUseCase';
@@ -13,10 +14,12 @@ routes.post('/feedbacks', async (req, res) => {
   const prismaFeedbackRepository = new FeedbacksRepository();
   const nodemailerMailService = new MailService();
   const issueService = new IssueService();
+  const bucketService = new BucketService();
   const submitFeedbackUseCase = new SubmitFeedbackUseCase(
     prismaFeedbackRepository,
     nodemailerMailService,
-    issueService
+    issueService,
+    bucketService
   );
 
   const feedback = await submitFeedbackUseCase.execute({

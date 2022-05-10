@@ -30,6 +30,8 @@ export function FeedbackContentStep({
 
     setIsSendingFeedback(true);
 
+    console.log(screenshot);
+
     await api.post('/feedbacks', {
       type: feedbackType,
       screenshot,

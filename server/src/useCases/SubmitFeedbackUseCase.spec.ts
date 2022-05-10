@@ -3,13 +3,15 @@ import { SubmitFeedbackUseCase } from './SubmitFeedbackUseCase';
 const createFeedbackSpy = jest.fn();
 const sendMailSpy = jest.fn();
 const sendIssueSpy = jest.fn();
+const sendImageSpy = jest.fn();
 
 const submitFeedback = new SubmitFeedbackUseCase(
   {
     create: createFeedbackSpy,
   },
   { sendMail: sendMailSpy },
-  { sendIssue: sendIssueSpy }
+  { sendIssue: sendIssueSpy },
+  { sendImage: sendImageSpy }
 );
 
 describe('Submit feedback', () => {
