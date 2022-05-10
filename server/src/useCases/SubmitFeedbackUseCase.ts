@@ -70,7 +70,9 @@ export class SubmitFeedbackUseCase {
       repo: 'nlw_return',
       title: `Feedback: ${type}`,
       body: `**Author: Our clients** <br/> _"${comment}"_  ${
-        uriS3Image && `<br/> This's image issue: [Click here](${uriS3Image})`
+        uriS3Image
+          ? `<br/> This's image issue: [Click here](${uriS3Image})`
+          : ''
       }`,
       labels: labelsContructor,
     });
